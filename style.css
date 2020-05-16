@@ -1,0 +1,19 @@
+  body{
+        background-color: #ff6600;
+        font-family: 'Balsamiq Sans', cursive;
+      }
+        canvas { 
+        background: #eee;
+        display: block;
+        margin: 0 auto; 
+        }
+
+        #btn1{
+         height: 30px;
+        width: 100px;
+        margin-left: 720px;
+            font-family: 'Balsamiq Sans', cursive;
+        }
+        #btngrp{
+            font-family: 'Balsamiq Sans', cursive; 
+        }
