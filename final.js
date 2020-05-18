@@ -78,7 +78,7 @@ drawpowerup();
 
 
 
-function jump1()
+function jump1()// to decrease the coordinates of the ball on click
 {
     if(y >= canvas.height/2)
     {
@@ -90,7 +90,7 @@ sound.play();
 }
 
 
-function checkcollision()
+function checkcollision()// to check collision with color wheel which changes the color
 {
     
     
@@ -120,7 +120,7 @@ function checkcollision()
 }
 
 var powerupvelocity=30;
-function drawpowerup()
+function drawpowerup() //gives a powerup such that the ball can pass though all the obstacles
 {
      powerups.forEach(powerup => {
     if(canvas.getContext){
@@ -156,7 +156,7 @@ function checkcollisionpowerup()
 
 
 
-function checkcollisionobs()
+function checkcollisionobs() //checking collision with circular obstacle
 {
 
   for (var i = 0; i < obstacles.length; i++) 
@@ -207,7 +207,7 @@ function checkcollisionobs()
 
 }
 
-function checkcollisionobs2()
+function checkcollisionobs2() // checking collision with type 2 obtsacle
 {
 
     for (var i = 0; i < obstacles2.length; i++) {
@@ -253,46 +253,9 @@ function randomIntFromRange(min,max)
 
 
 
-function createcoords()
-{
+ 
 
-coords=[];
-
-
-for(var i=0;i<5;i++)
-{
-
-   
-      var genY= -1*(randomIntFromRange(500,1000));
-    
-      radiuswheel=30;
-
-if(coords.length!=0)
-{
-
-  for (var j= 0 ; j< coords.length ; j++ ) 
-  {
-    
-  //if(finddist(xnew,circles[j].x,ynew,circles[j].y) < radi+circles[j].radius)
-    if(Math.abs(genY - coords[j].y) > 2000)
-  { 
-
-     var genY= -1*(randomIntFromRange(500,1000));
-    
-    j=-1;
-
-     }
-    }
-}
-
-    coords.push({y:genY});
-
-}
-createobj();
-}
-
-
-function createcoords1()
+function createcoords1() // creating array of equally spaced coordinates to plac the objects 
 {
     coords=[];
 for (var i = 0; i <20; i++) 
@@ -308,7 +271,7 @@ createobj();
 
 }
 
-function createobj()
+function createobj() //pushes the coordinates into different arrays
 {
 wheels=[];
 obstacles=[];
@@ -354,7 +317,7 @@ obstacles.push({y:coords[i],r:60});
 
 
 var wheelvelocity=30;
-function drawwheel()
+function drawwheel() //draws color wheel
 {
    
     wheels.forEach(wheel => {
@@ -401,7 +364,7 @@ function rep()
 
 
 var obstaclevelocity=30;
-function drawWheelobs() {
+function drawWheelobs() { //draws obstacle
           
   obstacles.forEach(obstacle => {
             if (canvas.getContext) { 
@@ -419,7 +382,7 @@ function drawWheelobs() {
 
                 }
 
-               if(colours.length<8)
+               if(colours.length<8)       //array of length 4 is made to lenght 8 and then, pointer is moved accordingly in cycle
                 {
                 
                 colours.push(colours[cpointer]);
@@ -469,7 +432,7 @@ var colours1 = [ "red", "green","blue","yellow"];
 
 
 var obstacle2color;
- function drawcircleobstacle() {  
+ function drawcircleobstacle() {  //draws circular obstacle
 
 
 
@@ -558,7 +521,7 @@ if(cpointer2<3)
 
    var ballinterval= setInterval(balli,400);
 
-  function stop() {
+  function stop()  { //function for stop  
   clearInterval(ballinterval);
 
   clearInterval(timeri);
@@ -566,7 +529,8 @@ if(cpointer2<3)
 
 
 
- function start() {
+ function start() { //function for start
+  
 
 
   ballinterval=setInterval(balli,400);
